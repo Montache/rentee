@@ -1,0 +1,43 @@
+{% extends 'Home/Home.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<center><h3>Login</h3></center><br> 
+
+<center>
+  <div class="container">
+    <div class="card mb-3" style="max-width: 540px; border: 5px solid green;">
+      <!-- <div class="row g-0"> -->
+        <!-- <div class="col-md-4">
+          <img src="..." class="img-fluid rounded-start" alt="...">
+        </div> -->
+        <!-- <div class="col-md-8"> -->
+          <div class="card-body">
+            <form action="" method="post" style="color: white;" >
+              {% csrf_token %}
+          
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" aria-describedby="emailHelp">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password">
+                  </div>
+                  <button type="submit" class="btn btn-primary" style="background-color: green; border: 2px solid green;">Login</button>
+            </form>
+          </div>
+        <!-- </div> -->
+      <!-- </div> -->
+    </div>
+  
+  </div>
+  
+</center>
+    
+
+    
+
+{% endblock %}

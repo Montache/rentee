@@ -1,0 +1,24 @@
+{% extends 'Home/Base.html' %}
+{% load static %}
+
+{% block content %}
+
+<h3>Login</h3>
+   <br>
+{% if form.errors %}
+    <p>There was an error with your registration details. Try again!</p>
+{% endif %}
+<form action="{% url 'signup' %}" method="post" >
+    {% csrf_token %}
+    
+        {{ form }}
+        <br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+    
+
+    
+
+{% endblock %}
+ 
