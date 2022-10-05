@@ -1,0 +1,16 @@
+.Welcomebanner{
+    background-color: orange;
+    background-size: contain;
+    text-align: center;
+    border-bottom: 25px;
+}
+.rentee{
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.tagline{
+    color: white;
+    background-color: black;
+    border: 2px solid grey;
+    border-style: round;
+}
