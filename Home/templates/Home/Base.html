@@ -1,0 +1,27 @@
+{% load static %}
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'Home/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'Home/css/Home.css' %}">
+</head>
+<body style="background:linear-gradient(to bottom, rgb(161, 226, 161, 1), rgb(223, 238, 223));">
+  {% include 'Home/Navbar.html' %}
+  
+      {% if messages %}
+      {% for message in messages %}
+        {{ message }}
+      {% endfor %}
+      {% endif %}
+  
+  
+  {% block content %}
+  
+  {% endblock %}
+  <br><br>
+  <div><center> <h4 style="text-align:center;">copyright 2022</h4></center></div>
+</body>
+   

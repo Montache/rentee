@@ -1,0 +1,78 @@
+{% extends 'Home/Base.html' %}
+{% load static %}
+{% block content %}
+
+<style>
+  .listing-details{
+    justify-content:center;
+    margin-left:80px;
+    /* margin-right:350px; */
+    margin-top:30px;
+    display:grid;
+    grid-template-columns: 40% 60%;
+  }
+  /* .listing-info{
+    background:white;
+    border: 2px solid green; 
+  } */
+  .listing-name{
+    color:green;
+    
+  }
+  .dailyamount{
+    background-color:green;
+    color: white;
+    font-size: 1.3em;
+
+  }
+</style>
+
+<div class="listing-details">
+  <div class="listing-image">
+    <!-- {% if listing.ListingImage %} -->
+    <img src="{{ listing.ListingImage.url }}" height="350" width="350" alt="">
+    <!-- {% endif %} -->
+    <h3 class="listing-name"> {{ listing.Name }} </h3> <br>
+  </div>
+  <div class="listing-info">
+    <div>
+      <strong class="location">Location: (ADD AN ICON) </strong>{{listing.Location}} <br><br>
+    </div>
+    <div>
+      <strong class="dailyamount">{{ listing.DailyRate }}/= </strong>  per Day<br><br>
+    </div>
+    
+    <strong>Description: </strong><br>
+    <h7> {{ listing.Description }} </h7><br><br>
+  </div>
+</div>
+
+
+
+
+
+
+
+    
+
+        
+
+
+
+<!-- <div class="card mb-3" style="max-width: 540px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="{{ listing.ListingImage.url }}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+     -->
+
+{% endblock %}

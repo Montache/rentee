@@ -1,0 +1,121 @@
+{% extends 'Home/Base.html' %}
+{% load static %}
+
+{% block content %}
+  <style>
+    div.item{
+      /* display: inline-block; */
+      -webkit-column-break-inside: avoid;  
+    }
+    .column{
+      column-count: 3;
+      width:100%;
+      margin-right:10px
+    
+    }
+    .card{
+      background: #fff;
+      width: 265;
+      height: 400;
+    }
+    .card:hover{
+      /* opacity: 1; */
+      transform: translateY(20px);
+    }
+    .banner{
+      margin-bottom: 30px;
+      background-color: green;
+    }
+    .banner-content{
+      padding-top: 30px;
+      padding-bottom: 30px;
+      text-align: center;
+    }
+    .search1{
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 15px;
+      padding-bottom: 15px;
+    }
+    .homepage{
+      margin-left:20px;
+      margin-right:0;
+      display:grid;
+      grid-template-columns:15% 65% 20%;
+    }
+    .Ad-column{
+      margin-left:5px;
+    }
+    /* .category-item{
+      text-decoration: ;
+    } */
+
+    .category-link{
+      list-style: none;
+      text-decoration:none;
+      color:green;
+    }
+  </style>
+
+
+<!-- <div class="row" style="background-color: goldenrod;"><br><br><br><br></div> -->
+
+<div class="banner">
+  <div class="banner-content">
+    <div class="tagline1">
+      <h3>Find Products and assets for rent</h3>
+    </div>
+    <div class="search1">
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="homepage">
+  <div class="category-column">
+    Categories list
+    {% for category in categorys %}
+    <li>
+      <ul class="category-items">
+        <a class="category-link" style="list-style: none;" href="#"> {{ category }}</a>
+      </ul>
+    </li>
+    {% endfor %}
+  </div>  
+  <div class="column">
+    {% for listing in listings %}
+
+    <!-- <div class="item">
+      <div class="card" style="width: 25rem fit-content; " >
+        <div class="card-body">
+          <img  src="{{ listing.ListingImage.url }}" width="265" height="200" alt="">
+          <h5 class="card-title"><strong>{{ listing.Name }}</strong></h5>
+          <h5 class="card-title"> <span> Owned by </span> <strong>{{listing.Owneruser.username }}</strong> </h5>
+          <a href="{% url 'listing' listing.id %}" class="btn btn-primary">View this Rentee</a>
+          <a href="#"><button class="btn btn-outline-success" type="submit"><img  src="{% static 'Home/images/5104700-200.png' %}" width="25" height="25" alt=""> <strong> {{ listing.Contact }}</strong></button></a>
+        </div>
+      </div>
+    </div><br><br> -->
+
+    <div class="item">
+      <div class="mycard" style="width: 265px fit-content; height:350px; " >
+        <div class="card-body">
+          <img  src="{{ listing.ListingImage.url }}" width="265" height="200" alt="">
+          <h5 class="card-title"><strong>{{ listing.Name }}</strong></h5>
+          <h5 class="card-owner"> <span> Owned by </span> <strong>{{listing.Owneruser.username }}</strong> </h5>
+          <a href="{% url 'listing' listing.id %}" class="btn btn-primary">View this Rentee</a>
+          <a href="#"><button class="btn btn-outline-success" type="submit"><img  src="{% static 'Home/images/5104700-200.png' %}" width="25" height="25" alt=""> <strong> {{ listing.Contact }}</strong></button></a>
+        </div>
+      </div>
+    </div><br><br>
+
+    {% endfor %}
+  </div>
+  <div class="Ad-column">
+    Ad block column
+  </div>
+</div>
+{% endblock %}
